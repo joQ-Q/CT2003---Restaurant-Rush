@@ -1,17 +1,17 @@
-package restaurantrush.boundary;
+package boundary;
 
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.OptionalDouble;
 import java.util.Scanner;
 
-import restaurantrush.entity.Customer;
-import restaurantrush.entity.GameState;
-import restaurantrush.entity.MenuItem;
-import restaurantrush.entity.Money;
-import restaurantrush.entity.Order;
-import restaurantrush.entity.Table;
-import restaurantrush.entity.WaiterTask;
+import entity.Customer;
+import entity.GameState;
+import entity.MenuItem;
+import entity.Money;
+import entity.Order;
+import entity.Table;
+import entity.WaiterTask;
 
 
 public class ConsoleUI {

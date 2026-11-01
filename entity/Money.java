@@ -1,4 +1,4 @@
-package restaurantrush.entity;
+package entity;
 
 public final class Money {
 
