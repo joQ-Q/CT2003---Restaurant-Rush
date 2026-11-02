@@ -1,4 +1,5 @@
 package entity;
+
 import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -6,6 +7,8 @@ import java.util.Comparator;
 import java.util.Deque;
 import java.util.List;
 import java.util.OptionalDouble;
+
+import staff.ActionResult;
 
 /** Game rules: 18 max turns, 2 tables, at least 4 paid customers, revenue at least $45, average satisfaction 60 */
 public class GameState {
@@ -19,8 +22,9 @@ public class GameState {
     private int revenueCents;
     private int unhappyDepartures;
     private int nextOrderId = 1;
-    private final List<Table> tables = new Arraylist<>();
+    private final List<Table> tables = new ArrayList<>();
     private final Deque<Customer> waitingQueue = new ArrayDeque<>();
+    private final List<Customer> customers = new ArrayList<>();
     private final Menu menu = new Menu();
     
     /* new game */

@@ -1,4 +1,4 @@
-package restaurantrush.entity;
+package entity;
 
 //The stages a customer passes through, from arrival to leaving the restaurant.
 public enum CustomerState {

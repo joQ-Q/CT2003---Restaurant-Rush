@@ -1,18 +1,18 @@
-package restaurantrush.control;
+package control;
 
 import java.util.List;
 
-import restaurantrush.boundary.ConsoleUI;
-import restaurantrush.entity.Customer;
-import restaurantrush.entity.CustomerState;
-import restaurantrush.entity.GameState;
-import restaurantrush.entity.Money;
-import restaurantrush.entity.Order;
-import restaurantrush.entity.WaiterTask;
-import restaurantrush.staff.ActionResult;
-import restaurantrush.staff.Cashier;
-import restaurantrush.staff.Chef;
-import restaurantrush.staff.Waiter;
+import boundary.ConsoleUI;
+import entity.Customer;
+import entity.CustomerState;
+import entity.GameState;
+import entity.Money;
+import entity.Order;
+import entity.WaiterTask;
+import staff.ActionResult;
+import staff.Cashier;
+import staff.Chef;
+import staff.Waiter;
 
 
 public class GameController {

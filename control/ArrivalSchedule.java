@@ -1,7 +1,7 @@
-package restaurantrush.control;
+package control;
 
-import restaurantrush.entity.Customer;
-import restaurantrush.entity.RegularCustomer;
+import entity.Customer;
+import entity.RegularCustomer;
 
 //Decides who arrives and when. In the base setting one customer arrives at the start of turns 1, 4, 7, 10, 13 and 16.
 

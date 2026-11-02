@@ -1,11 +1,11 @@
-package restaurantrush.staff;
+package staff;
 
-import restaurantrush.entity.Customer;
-import restaurantrush.entity.CustomerState;
-import restaurantrush.entity.GameState;
-import restaurantrush.entity.MenuItem;
-import restaurantrush.entity.Money;
-import restaurantrush.entity.Order;
+import entity.Customer;
+import entity.CustomerState;
+import entity.GameState;
+import entity.MenuItem;
+import entity.Money;
+import entity.Order;
 
 public class Waiter {
 

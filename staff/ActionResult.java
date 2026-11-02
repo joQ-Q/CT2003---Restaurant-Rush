@@ -1,4 +1,4 @@
-package restaurantrush.staff;
+package staff;
 
 
 public final class ActionResult {

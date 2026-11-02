@@ -1,4 +1,4 @@
-package restaurantrush.entity;
+package entity;
 
 public abstract class Customer {
 
