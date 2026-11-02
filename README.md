@@ -28,20 +28,6 @@ java -cp out Main
 
 Play by typing a number and pressing Enter.
 
-### Replay a scripted run
-PowerShell does not support `<`, so pass the command to `cmd`:
-```powershell
-cmd /c "java -cp out Main < test-inputs\victory.txt"
-cmd /c "java -cp out Main < test-inputs\defeat.txt"
-```
-macOS / Linux / Git Bash:
-```bash
-java -cp out Main < test-inputs/victory.txt
-java -cp out Main < test-inputs/defeat.txt
-```
-
-To run a specific stage, check out its tag first, e.g. `git checkout stage-1`, then build and run as above.
-
 ## Packages
 
 | Package | Classes | Role |
