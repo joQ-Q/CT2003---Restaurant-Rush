@@ -1,0 +1,424 @@
+============================================================
+  RESTAURANT RUSH  -  Stage 1: Basic operation
+============================================================
+You are the manager. Staff: 1 Waiter, 1 Chef, 1 Cashier. Tables: 2.
+Customers arrive on turns 1, 4, 7, 10, 13 and 16.
+Menu:
+  - Salad ($9.00, 1 unit)
+  - Burger ($15.00, 1 unit)
+  - Pasta ($18.00, 2 units)
+Goal after turn 18: at least 4 paid customers, revenue at least $45.00, average satisfaction of paid customers at least 60.
+> Customer #1 (Regular) arrives and joins the waiting queue.
+
+============================================================
+  TURN 1 / 18
+============================================================
+Revenue: $0.00   Avg satisfaction (paid): N/A   Paid: 0
+Waiting queue: 
+  #1 Regular (satisfaction 100)
+Tables:
+  Table 1: free
+  Table 2: free
+Staff tasks available:
+  Waiter : seat 1 waiting (a free table) | take order 0 | serve 0 ready dish(es)
+  Chef   : 0 order(s) in preparation
+  Cashier: automatic, nobody can pay this turn
+
+Waiter task:  1) Seat a customer   2) Take an order   3) Serve a READY dish   0) Wait
+Choose 0-3: > The Waiter waits this turn.
+> The Chef has nothing to prepare this turn.
+> Cashier (automatic): nobody is ready to pay this turn.
+--- End of turn 1: served 0 | unhappy departures 0 | revenue $0.00 | avg satisfaction N/A | turns used 1/18 ---
+
+============================================================
+  TURN 2 / 18
+============================================================
+Revenue: $0.00   Avg satisfaction (paid): N/A   Paid: 0
+Waiting queue: 
+  #1 Regular (satisfaction 92)
+Tables:
+  Table 1: free
+  Table 2: free
+Staff tasks available:
+  Waiter : seat 1 waiting (a free table) | take order 0 | serve 0 ready dish(es)
+  Chef   : 0 order(s) in preparation
+  Cashier: automatic, nobody can pay this turn
+
+Waiter task:  1) Seat a customer   2) Take an order   3) Serve a READY dish   0) Wait
+Choose 0-3: > The Waiter waits this turn.
+> The Chef has nothing to prepare this turn.
+> Cashier (automatic): nobody is ready to pay this turn.
+--- End of turn 2: served 0 | unhappy departures 0 | revenue $0.00 | avg satisfaction N/A | turns used 2/18 ---
+
+============================================================
+  TURN 3 / 18
+============================================================
+Revenue: $0.00   Avg satisfaction (paid): N/A   Paid: 0
+Waiting queue: 
+  #1 Regular (satisfaction 84)
+Tables:
+  Table 1: free
+  Table 2: free
+Staff tasks available:
+  Waiter : seat 1 waiting (a free table) | take order 0 | serve 0 ready dish(es)
+  Chef   : 0 order(s) in preparation
+  Cashier: automatic, nobody can pay this turn
+
+Waiter task:  1) Seat a customer   2) Take an order   3) Serve a READY dish   0) Wait
+Choose 0-3: > The Waiter waits this turn.
+> The Chef has nothing to prepare this turn.
+> Cashier (automatic): nobody is ready to pay this turn.
+--- End of turn 3: served 0 | unhappy departures 0 | revenue $0.00 | avg satisfaction N/A | turns used 3/18 ---
+> Customer #2 (Regular) arrives and joins the waiting queue.
+
+============================================================
+  TURN 4 / 18
+============================================================
+Revenue: $0.00   Avg satisfaction (paid): N/A   Paid: 0
+Waiting queue: 
+  #1 Regular (satisfaction 76)
+  #2 Regular (satisfaction 100)
+Tables:
+  Table 1: free
+  Table 2: free
+Staff tasks available:
+  Waiter : seat 2 waiting (a free table) | take order 0 | serve 0 ready dish(es)
+  Chef   : 0 order(s) in preparation
+  Cashier: automatic, nobody can pay this turn
+
+Waiter task:  1) Seat a customer   2) Take an order   3) Serve a READY dish   0) Wait
+Choose 0-3: > The Waiter waits this turn.
+> The Chef has nothing to prepare this turn.
+> Cashier (automatic): nobody is ready to pay this turn.
+--- End of turn 4: served 0 | unhappy departures 0 | revenue $0.00 | avg satisfaction N/A | turns used 4/18 ---
+
+============================================================
+  TURN 5 / 18
+============================================================
+Revenue: $0.00   Avg satisfaction (paid): N/A   Paid: 0
+Waiting queue: 
+  #1 Regular (satisfaction 68)
+  #2 Regular (satisfaction 92)
+Tables:
+  Table 1: free
+  Table 2: free
+Staff tasks available:
+  Waiter : seat 2 waiting (a free table) | take order 0 | serve 0 ready dish(es)
+  Chef   : 0 order(s) in preparation
+  Cashier: automatic, nobody can pay this turn
+
+Waiter task:  1) Seat a customer   2) Take an order   3) Serve a READY dish   0) Wait
+Choose 0-3: > The Waiter waits this turn.
+> The Chef has nothing to prepare this turn.
+> Cashier (automatic): nobody is ready to pay this turn.
+--- End of turn 5: served 0 | unhappy departures 0 | revenue $0.00 | avg satisfaction N/A | turns used 5/18 ---
+
+============================================================
+  TURN 6 / 18
+============================================================
+Revenue: $0.00   Avg satisfaction (paid): N/A   Paid: 0
+Waiting queue: 
+  #1 Regular (satisfaction 60)
+  #2 Regular (satisfaction 84)
+Tables:
+  Table 1: free
+  Table 2: free
+Staff tasks available:
+  Waiter : seat 2 waiting (a free table) | take order 0 | serve 0 ready dish(es)
+  Chef   : 0 order(s) in preparation
+  Cashier: automatic, nobody can pay this turn
+
+Waiter task:  1) Seat a customer   2) Take an order   3) Serve a READY dish   0) Wait
+Choose 0-3: > The Waiter waits this turn.
+> The Chef has nothing to prepare this turn.
+> Cashier (automatic): nobody is ready to pay this turn.
+--- End of turn 6: served 0 | unhappy departures 0 | revenue $0.00 | avg satisfaction N/A | turns used 6/18 ---
+> Customer #3 (Regular) arrives and joins the waiting queue.
+
+============================================================
+  TURN 7 / 18
+============================================================
+Revenue: $0.00   Avg satisfaction (paid): N/A   Paid: 0
+Waiting queue: 
+  #1 Regular (satisfaction 52)
+  #2 Regular (satisfaction 76)
+  #3 Regular (satisfaction 100)
+Tables:
+  Table 1: free
+  Table 2: free
+Staff tasks available:
+  Waiter : seat 3 waiting (a free table) | take order 0 | serve 0 ready dish(es)
+  Chef   : 0 order(s) in preparation
+  Cashier: automatic, nobody can pay this turn
+
+Waiter task:  1) Seat a customer   2) Take an order   3) Serve a READY dish   0) Wait
+Choose 0-3: > The Waiter waits this turn.
+> The Chef has nothing to prepare this turn.
+> Cashier (automatic): nobody is ready to pay this turn.
+--- End of turn 7: served 0 | unhappy departures 0 | revenue $0.00 | avg satisfaction N/A | turns used 7/18 ---
+
+============================================================
+  TURN 8 / 18
+============================================================
+Revenue: $0.00   Avg satisfaction (paid): N/A   Paid: 0
+Waiting queue: 
+  #1 Regular (satisfaction 44)
+  #2 Regular (satisfaction 68)
+  #3 Regular (satisfaction 92)
+Tables:
+  Table 1: free
+  Table 2: free
+Staff tasks available:
+  Waiter : seat 3 waiting (a free table) | take order 0 | serve 0 ready dish(es)
+  Chef   : 0 order(s) in preparation
+  Cashier: automatic, nobody can pay this turn
+
+Waiter task:  1) Seat a customer   2) Take an order   3) Serve a READY dish   0) Wait
+Choose 0-3: > The Waiter waits this turn.
+> The Chef has nothing to prepare this turn.
+> Cashier (automatic): nobody is ready to pay this turn.
+--- End of turn 8: served 0 | unhappy departures 0 | revenue $0.00 | avg satisfaction N/A | turns used 8/18 ---
+
+============================================================
+  TURN 9 / 18
+============================================================
+Revenue: $0.00   Avg satisfaction (paid): N/A   Paid: 0
+Waiting queue: 
+  #1 Regular (satisfaction 36)
+  #2 Regular (satisfaction 60)
+  #3 Regular (satisfaction 84)
+Tables:
+  Table 1: free
+  Table 2: free
+Staff tasks available:
+  Waiter : seat 3 waiting (a free table) | take order 0 | serve 0 ready dish(es)
+  Chef   : 0 order(s) in preparation
+  Cashier: automatic, nobody can pay this turn
+
+Waiter task:  1) Seat a customer   2) Take an order   3) Serve a READY dish   0) Wait
+Choose 0-3: > The Waiter waits this turn.
+> The Chef has nothing to prepare this turn.
+> Cashier (automatic): nobody is ready to pay this turn.
+--- End of turn 9: served 0 | unhappy departures 0 | revenue $0.00 | avg satisfaction N/A | turns used 9/18 ---
+> Customer #4 (Regular) arrives and joins the waiting queue.
+
+============================================================
+  TURN 10 / 18
+============================================================
+Revenue: $0.00   Avg satisfaction (paid): N/A   Paid: 0
+Waiting queue: 
+  #1 Regular (satisfaction 28)
+  #2 Regular (satisfaction 52)
+  #3 Regular (satisfaction 76)
+  #4 Regular (satisfaction 100)
+Tables:
+  Table 1: free
+  Table 2: free
+Staff tasks available:
+  Waiter : seat 4 waiting (a free table) | take order 0 | serve 0 ready dish(es)
+  Chef   : 0 order(s) in preparation
+  Cashier: automatic, nobody can pay this turn
+
+Waiter task:  1) Seat a customer   2) Take an order   3) Serve a READY dish   0) Wait
+Choose 0-3: > The Waiter waits this turn.
+> The Chef has nothing to prepare this turn.
+> Cashier (automatic): nobody is ready to pay this turn.
+--- End of turn 10: served 0 | unhappy departures 0 | revenue $0.00 | avg satisfaction N/A | turns used 10/18 ---
+
+============================================================
+  TURN 11 / 18
+============================================================
+Revenue: $0.00   Avg satisfaction (paid): N/A   Paid: 0
+Waiting queue: 
+  #1 Regular (satisfaction 20)
+  #2 Regular (satisfaction 44)
+  #3 Regular (satisfaction 68)
+  #4 Regular (satisfaction 92)
+Tables:
+  Table 1: free
+  Table 2: free
+Staff tasks available:
+  Waiter : seat 4 waiting (a free table) | take order 0 | serve 0 ready dish(es)
+  Chef   : 0 order(s) in preparation
+  Cashier: automatic, nobody can pay this turn
+
+Waiter task:  1) Seat a customer   2) Take an order   3) Serve a READY dish   0) Wait
+Choose 0-3: > The Waiter waits this turn.
+> The Chef has nothing to prepare this turn.
+> Cashier (automatic): nobody is ready to pay this turn.
+--- End of turn 11: served 0 | unhappy departures 0 | revenue $0.00 | avg satisfaction N/A | turns used 11/18 ---
+
+============================================================
+  TURN 12 / 18
+============================================================
+Revenue: $0.00   Avg satisfaction (paid): N/A   Paid: 0
+Waiting queue: 
+  #1 Regular (satisfaction 12)
+  #2 Regular (satisfaction 36)
+  #3 Regular (satisfaction 60)
+  #4 Regular (satisfaction 84)
+Tables:
+  Table 1: free
+  Table 2: free
+Staff tasks available:
+  Waiter : seat 4 waiting (a free table) | take order 0 | serve 0 ready dish(es)
+  Chef   : 0 order(s) in preparation
+  Cashier: automatic, nobody can pay this turn
+
+Waiter task:  1) Seat a customer   2) Take an order   3) Serve a READY dish   0) Wait
+Choose 0-3: > The Waiter waits this turn.
+> The Chef has nothing to prepare this turn.
+> Cashier (automatic): nobody is ready to pay this turn.
+--- End of turn 12: served 0 | unhappy departures 0 | revenue $0.00 | avg satisfaction N/A | turns used 12/18 ---
+> Customer #5 (Regular) arrives and joins the waiting queue.
+
+============================================================
+  TURN 13 / 18
+============================================================
+Revenue: $0.00   Avg satisfaction (paid): N/A   Paid: 0
+Waiting queue: 
+  #1 Regular (satisfaction 4)
+  #2 Regular (satisfaction 28)
+  #3 Regular (satisfaction 52)
+  #4 Regular (satisfaction 76)
+  #5 Regular (satisfaction 100)
+Tables:
+  Table 1: free
+  Table 2: free
+Staff tasks available:
+  Waiter : seat 5 waiting (a free table) | take order 0 | serve 0 ready dish(es)
+  Chef   : 0 order(s) in preparation
+  Cashier: automatic, nobody can pay this turn
+
+Waiter task:  1) Seat a customer   2) Take an order   3) Serve a READY dish   0) Wait
+Choose 0-3: > The Waiter waits this turn.
+> The Chef has nothing to prepare this turn.
+> Cashier (automatic): nobody is ready to pay this turn.
+> Customer #1 ran out of patience and left without paying.
+--- End of turn 13: served 0 | unhappy departures 1 | revenue $0.00 | avg satisfaction N/A | turns used 13/18 ---
+
+============================================================
+  TURN 14 / 18
+============================================================
+Revenue: $0.00   Avg satisfaction (paid): N/A   Paid: 0
+Waiting queue: 
+  #2 Regular (satisfaction 20)
+  #3 Regular (satisfaction 44)
+  #4 Regular (satisfaction 68)
+  #5 Regular (satisfaction 92)
+Tables:
+  Table 1: free
+  Table 2: free
+Staff tasks available:
+  Waiter : seat 4 waiting (a free table) | take order 0 | serve 0 ready dish(es)
+  Chef   : 0 order(s) in preparation
+  Cashier: automatic, nobody can pay this turn
+
+Waiter task:  1) Seat a customer   2) Take an order   3) Serve a READY dish   0) Wait
+Choose 0-3: > The Waiter waits this turn.
+> The Chef has nothing to prepare this turn.
+> Cashier (automatic): nobody is ready to pay this turn.
+--- End of turn 14: served 0 | unhappy departures 1 | revenue $0.00 | avg satisfaction N/A | turns used 14/18 ---
+
+============================================================
+  TURN 15 / 18
+============================================================
+Revenue: $0.00   Avg satisfaction (paid): N/A   Paid: 0
+Waiting queue: 
+  #2 Regular (satisfaction 12)
+  #3 Regular (satisfaction 36)
+  #4 Regular (satisfaction 60)
+  #5 Regular (satisfaction 84)
+Tables:
+  Table 1: free
+  Table 2: free
+Staff tasks available:
+  Waiter : seat 4 waiting (a free table) | take order 0 | serve 0 ready dish(es)
+  Chef   : 0 order(s) in preparation
+  Cashier: automatic, nobody can pay this turn
+
+Waiter task:  1) Seat a customer   2) Take an order   3) Serve a READY dish   0) Wait
+Choose 0-3: > The Waiter waits this turn.
+> The Chef has nothing to prepare this turn.
+> Cashier (automatic): nobody is ready to pay this turn.
+--- End of turn 15: served 0 | unhappy departures 1 | revenue $0.00 | avg satisfaction N/A | turns used 15/18 ---
+> Customer #6 (Regular) arrives and joins the waiting queue.
+
+============================================================
+  TURN 16 / 18
+============================================================
+Revenue: $0.00   Avg satisfaction (paid): N/A   Paid: 0
+Waiting queue: 
+  #2 Regular (satisfaction 4)
+  #3 Regular (satisfaction 28)
+  #4 Regular (satisfaction 52)
+  #5 Regular (satisfaction 76)
+  #6 Regular (satisfaction 100)
+Tables:
+  Table 1: free
+  Table 2: free
+Staff tasks available:
+  Waiter : seat 5 waiting (a free table) | take order 0 | serve 0 ready dish(es)
+  Chef   : 0 order(s) in preparation
+  Cashier: automatic, nobody can pay this turn
+
+Waiter task:  1) Seat a customer   2) Take an order   3) Serve a READY dish   0) Wait
+Choose 0-3: > The Waiter waits this turn.
+> The Chef has nothing to prepare this turn.
+> Cashier (automatic): nobody is ready to pay this turn.
+> Customer #2 ran out of patience and left without paying.
+--- End of turn 16: served 0 | unhappy departures 2 | revenue $0.00 | avg satisfaction N/A | turns used 16/18 ---
+
+============================================================
+  TURN 17 / 18
+============================================================
+Revenue: $0.00   Avg satisfaction (paid): N/A   Paid: 0
+Waiting queue: 
+  #3 Regular (satisfaction 20)
+  #4 Regular (satisfaction 44)
+  #5 Regular (satisfaction 68)
+  #6 Regular (satisfaction 92)
+Tables:
+  Table 1: free
+  Table 2: free
+Staff tasks available:
+  Waiter : seat 4 waiting (a free table) | take order 0 | serve 0 ready dish(es)
+  Chef   : 0 order(s) in preparation
+  Cashier: automatic, nobody can pay this turn
+
+Waiter task:  1) Seat a customer   2) Take an order   3) Serve a READY dish   0) Wait
+Choose 0-3: > The Waiter waits this turn.
+> The Chef has nothing to prepare this turn.
+> Cashier (automatic): nobody is ready to pay this turn.
+--- End of turn 17: served 0 | unhappy departures 2 | revenue $0.00 | avg satisfaction N/A | turns used 17/18 ---
+
+============================================================
+  TURN 18 / 18
+============================================================
+Revenue: $0.00   Avg satisfaction (paid): N/A   Paid: 0
+Waiting queue: 
+  #3 Regular (satisfaction 12)
+  #4 Regular (satisfaction 36)
+  #5 Regular (satisfaction 60)
+  #6 Regular (satisfaction 84)
+Tables:
+  Table 1: free
+  Table 2: free
+Staff tasks available:
+  Waiter : seat 4 waiting (a free table) | take order 0 | serve 0 ready dish(es)
+  Chef   : 0 order(s) in preparation
+  Cashier: automatic, nobody can pay this turn
+
+Waiter task:  1) Seat a customer   2) Take an order   3) Serve a READY dish   0) Wait
+Choose 0-3: > The Waiter waits this turn.
+> The Chef has nothing to prepare this turn.
+> Cashier (automatic): nobody is ready to pay this turn.
+--- End of turn 18: served 0 | unhappy departures 2 | revenue $0.00 | avg satisfaction N/A | turns used 18/18 ---
+
+============================================================
+  DEFEAT. The restaurant missed at least one target.
+============================================================
+[MISS] Paid customers: 0 (target 4)
+[MISS] Revenue: $0.00 (target $45.00)
+[MISS] Average satisfaction: N/A (target 60)
+    Unhappy departures: 2
