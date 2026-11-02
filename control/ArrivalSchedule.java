@@ -1,5 +1,7 @@
 package control;
 
+import entity.CriticCustomer;
+import entity.VIPCustomer;
 import entity.Customer;
 import entity.RegularCustomer;
 
@@ -8,8 +10,11 @@ import entity.RegularCustomer;
 public class ArrivalSchedule {
 
     private static final int[] ARRIVAL_TURNS = {1, 4, 7, 10, 13, 16};
+    private static final int VIP_TURN = 4;
+    private static final int CRITIC_TURN = 10;
 
     private int nextCustomerId = 1;
+
 
     //Creates the base-setting arrival schedule.
     public ArrivalSchedule() {
@@ -26,6 +31,12 @@ public class ArrivalSchedule {
     }
 
     private Customer createCustomer(int turn, int id) {
+        if (turn == VIP_TURN){
+            return new VIPCustomer(id, turn);
+        }
+        if (turn == CRITIC_TURN){
+            return new CriticCustomer(id, turn);
+        }
         return new RegularCustomer(id, turn);
     }
 }
