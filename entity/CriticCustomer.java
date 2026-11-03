@@ -1,4 +1,4 @@
-package restaurantrush.entity;
+package entity;
 
 /**
  * A food critic: impatient (loses 12 satisfaction per waiting turn) and
