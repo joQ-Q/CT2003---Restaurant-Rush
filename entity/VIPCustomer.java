@@ -1,4 +1,4 @@
-package restaurantrush.entity;
+package entity;
 
 /**
  * A VIP customer: more patient than a regular (loses 5 satisfaction per

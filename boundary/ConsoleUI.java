@@ -27,7 +27,7 @@ public class ConsoleUI {
 
     public void displayWelcome(GameState state) {
         System.out.println(LINE);
-        System.out.println("  RESTAURANT RUSH  -  Stage 1: Basic operation");
+        System.out.println("  RESTAURANT RUSH  -  Stage 2: Customer behaviour");
         System.out.println(LINE);
         System.out.println("You are the manager. Staff: 1 Waiter, 1 Chef, 1 Cashier. Tables: " + GameState.TABLE_COUNT + ".");
         System.out.println("Customers arrive on turns 1, 4, 7, 10, 13 and 16.");
