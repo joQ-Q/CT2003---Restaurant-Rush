@@ -1,8 +1,9 @@
 package entity;
 
+import java.util.List;
+
 public abstract class Customer {
 
-    // Satisfaction every customer starts with. 
     public static final int MAX_SATISFACTION = 100;
 
     private final int id;
@@ -28,9 +29,13 @@ public abstract class Customer {
         return basePriceCents;
     }
 
-    public MenuItem chooseMenuItem(Menu menu) {
-        int index = (id - 1) % menu.getItems().size();
-        return menu.getItem(index);
+    public MenuOffering chooseOffering(Menu menu) {
+        List<MenuOffering> offerings = menu.getOfferings();
+        return offerings.get((id - 1) % offerings.size());
+    }
+
+    public void recoverSatisfaction(int points) {
+        satisfaction = Math.min(MAX_SATISFACTION, satisfaction + points);
     }
 
     public boolean applyWaitingLoss() {

@@ -7,12 +7,12 @@ import java.util.Scanner;
 
 import entity.Customer;
 import entity.GameState;
-import entity.MenuItem;
+import entity.HappyHour;
+import entity.MenuOffering;
 import entity.Money;
 import entity.Order;
 import entity.Table;
 import entity.WaiterTask;
-
 
 public class ConsoleUI {
 
@@ -27,14 +27,18 @@ public class ConsoleUI {
 
     public void displayWelcome(GameState state) {
         System.out.println(LINE);
-        System.out.println("  RESTAURANT RUSH  -  Stage 2: Customer behaviour");
+        System.out.println("  RESTAURANT RUSH  -  Stage 3: Host, combos and Happy Hour");
         System.out.println(LINE);
-        System.out.println("You are the manager. Staff: 1 Waiter, 1 Chef, 1 Cashier. Tables: " + GameState.TABLE_COUNT + ".");
+        System.out.println("You are the manager. Staff: 1 Host, 1 Waiter, 1 Chef, 1 Cashier. Tables: " + GameState.TABLE_COUNT + ".");
         System.out.println("Customers arrive on turns 1, 4, 7, 10, 13 and 16.");
-        System.out.println("Menu:");
-        for (MenuItem item : state.getMenu().getItems()) {
-            System.out.println("  - " + item);
+        System.out.println("Customer types: Regular (-8 satisfaction per waiting turn), VIP (-5 per turn, 10% off),");
+        System.out.println("                Critic (-12 per turn, always orders the most expensive dish).");
+        System.out.println("Menu (combos are 90% of the two dishes' price):");
+        for (MenuOffering offering : state.getMenu().getOfferings()) {
+            System.out.println("  - " + offering);
         }
+        System.out.println("Happy Hour: once per game, at the start of a turn. Lasts 2 turns: orders get 20% off");
+        System.out.println("            and waiting customers recover 15 satisfaction at the start of each turn.");
         System.out.println("Goal after turn " + GameState.MAX_TURNS + ": at least " + GameState.TARGET_PAID
                 + " paid customers, revenue at least " + Money.format(GameState.TARGET_REVENUE_CENTS)
                 + ", average satisfaction of paid customers at least " + GameState.TARGET_AVG_SATISFACTION + ".");
@@ -72,7 +76,12 @@ public class ConsoleUI {
             }
         }
 
+        HappyHour happyHour = state.getHappyHour();
+        System.out.println("Happy Hour: " + (happyHour.isActive() ? "ACTIVE, " + happyHour.getTurnsRemaining()
+                + " turn(s) left including this one" : happyHour.isUsed() ? "already used" : "available (once per game)"));
         System.out.println("Staff tasks available:");
+        System.out.println("  Host   : seat " + queue.size() + " waiting (" + (state.findFreeTable() == null ? "no" : "a")
+                + " free table), in addition to the Waiter");
         System.out.println("  Waiter : seat " + queue.size() + " waiting (" + (state.findFreeTable() == null ? "no" : "a")
                 + " free table) | take order " + state.getCustomersToOrder().size() + " | serve "
                 + state.getServableOrders().size() + " ready dish(es)");
@@ -85,6 +94,16 @@ public class ConsoleUI {
             System.out.println("  Cashier: automatic, will charge #" + next.getId() + " "
                     + Money.format(next.getOrder().getBillCents()) + " after the Waiter and Chef act");
         }
+    }
+
+    public boolean promptHappyHour() {
+        System.out.println();
+        System.out.println("Happy Hour (once per game):  1) Activate now   0) Not now");
+        return readInt("Choose 0-1: ", 0, 1) == 1;
+    }
+
+    public void displayHappyHour(int turnsLeft) {
+        showMessage("Happy Hour is active: " + turnsLeft + " turn(s) left including this one.");
     }
 
     public WaiterTask promptWaiterTask() {
@@ -112,7 +131,6 @@ public class ConsoleUI {
         return choice == 0 ? null : options.get(choice - 1);
     }
 
-
     public Order promptOrder(List<Order> options) {
         for (int i = 0; i < options.size(); i++) {
             System.out.println("  " + (i + 1) + ") " + options.get(i));
@@ -121,7 +139,6 @@ public class ConsoleUI {
         int choice = readInt("Choose an order: ", 0, options.size());
         return choice == 0 ? null : options.get(choice - 1);
     }
-
 
     public void showMessage(String message) {
         System.out.println("> " + message);
