@@ -8,7 +8,7 @@ package entity;
 public class Order {
 
     private final int id;
-    private final MenuItem item;
+    private final MenuOffering item;
     private final Customer customer;
     private final int billCents;
     private int unitsDone;
@@ -23,7 +23,7 @@ public class Order {
      * @param customer  the customer who placed the order
      * @param billCents the locked bill in cents
      */
-    public Order(int id, MenuItem item, Customer customer, int billCents) {
+    public Order(int id, MenuOffering item, Customer customer, int billCents) {
         this.id = id;
         this.item = item;
         this.customer = customer;
@@ -92,7 +92,7 @@ public class Order {
      *
      * @return the dish ordered
      */
-    public MenuItem getItem() {
+    public MenuOffering getItem() {
         return item;
     }
 

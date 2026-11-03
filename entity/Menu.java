@@ -10,14 +10,23 @@ import java.util.List;
 public class Menu {
 
     private final List<MenuItem> items = new ArrayList<>();
+    private final List<ComboMeal> combos = new ArrayList<>();
 
     /**
-     * Creates the base-setting menu: Salad, Burger and Pasta.
+     * Creates the base-setting menu: Salad, Burger and Pasta, plus one combo
+     * for every pair of different items (Salad + Burger, Salad + Pasta,
+     * Burger + Pasta).
      */
     public Menu() {
         items.add(new MenuItem("Salad", 900, 1));
         items.add(new MenuItem("Burger", 1500, 1));
         items.add(new MenuItem("Pasta", 1800, 2));
+        for (int i = 0; i < items.size(); i++) {
+            for (int j = i + 1; j < items.size(); j++) {
+                combos.add(new ComboMeal(items.get(i), items.get(j)));
+            }
+        }
+
     }
 
     /**
@@ -37,5 +46,26 @@ public class Menu {
      */
     public MenuItem getItem(int index) {
         return items.get(index);
+    }
+
+       /**
+     * Returns the combo meals in a read-only list.
+     *
+     * @return all combos
+     */
+    public List<ComboMeal> getCombos() {
+        return Collections.unmodifiableList(combos);
+    }
+
+    /**
+     * Returns everything a customer can order: the single items first,
+     * then the combos, in menu order.
+     *
+     * @return all offerings
+     */
+    public List<MenuOffering> getOfferings() {
+        List<MenuOffering> all = new ArrayList<>(items);
+        all.addAll(combos);
+        return all;
     }
 }
