@@ -3,7 +3,7 @@ package entity;
 /**
  * A single dish on the menu. Menu items are immutable once created.
  */
-public class MenuItem {
+public class MenuItem implements MenuOffering {
 
     private final String name;
     private final int priceCents;
