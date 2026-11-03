@@ -26,6 +26,7 @@ public class GameState {
     private final Deque<Customer> waitingQueue = new ArrayDeque<>();
     private final List<Customer> customers = new ArrayList<>();
     private final Menu menu = new Menu();
+    private final HappyHour happyHour = new HappyHour();
     
     /* new game */
     public GameState(){
@@ -229,6 +230,10 @@ public class GameState {
     /** Returns the menu */
     public Menu getMenu() {
         return menu;
+    }
+    /** Returns the Happy Hour policy for this game */
+    public HappyHour getHappyHour() {
+        return happyHour;
     }
 }
 
