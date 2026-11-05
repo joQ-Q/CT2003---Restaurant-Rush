@@ -4,7 +4,7 @@ import boundary.ConsoleUI;
 import control.GameController;
 
 /**
- * Entry point for Restaurant Rush (Stage 1).
+ * Entry point for Restaurant Rush.
  */
 public class Main {
 
