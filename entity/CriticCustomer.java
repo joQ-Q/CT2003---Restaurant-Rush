@@ -36,7 +36,7 @@ public class CriticCustomer extends Customer {
      * @return the most expensive dish
      */
     @Override
-    public MenuItem chooseMenuItem(Menu menu) {
+    public MenuOffering chooseOffering(Menu menu) {
         MenuItem best = menu.getItem(0);
         for (MenuItem item : menu.getItems()) {
             if (item.getPriceCents() > best.getPriceCents()) {

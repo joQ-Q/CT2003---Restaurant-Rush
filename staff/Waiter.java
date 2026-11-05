@@ -3,7 +3,7 @@ package staff;
 import entity.Customer;
 import entity.CustomerState;
 import entity.GameState;
-import entity.MenuItem;
+import entity.MenuOffering;
 import entity.Money;
 import entity.Order;
 
@@ -23,7 +23,7 @@ public class Waiter {
         if (c == null || c.getState() != CustomerState.SEATED) {
             return ActionResult.fail("Only a seated customer who has not ordered yet can place an order.");
         }
-        MenuItem item = c.chooseMenuItem(state.getMenu());
+        MenuOffering item = c.chooseOffering(state.getMenu());
         int bill = c.calculateBill(item.getPriceCents());
         Order order = new Order(state.nextOrderId(), item, c, bill);
         c.setOrder(order);
