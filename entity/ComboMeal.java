@@ -1,4 +1,4 @@
-package restaurantrush.entity;
+package entity;
 
 /**
  * A combo made of two existing menu items. Preparation units are the sum of

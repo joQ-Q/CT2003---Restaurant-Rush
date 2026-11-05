@@ -1,7 +1,7 @@
-package restaurantrush.staff;
+package staff;
 
-import restaurantrush.entity.Customer;
-import restaurantrush.entity.GameState;
+import entity.Customer;
+import entity.GameState;
 
 /**
  * The Host seats at most one queued customer per turn, in addition to the

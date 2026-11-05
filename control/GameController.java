@@ -6,15 +6,20 @@ import boundary.ConsoleUI;
 import entity.Customer;
 import entity.CustomerState;
 import entity.GameState;
+import entity.HappyHour;
 import entity.Money;
 import entity.Order;
 import entity.WaiterTask;
 import staff.ActionResult;
 import staff.Cashier;
 import staff.Chef;
+import staff.Host;
 import staff.Waiter;
 
 
+ /**Runs the game. This is the only class that knows the order of the 
+  * six turn steps: arrivals, manager choices, kitchen and serving, eating and payment, waiting and abandonment, and the final result.
+*/
 public class GameController {
 
     private final GameState state;
@@ -23,6 +28,7 @@ public class GameController {
     private final Waiter waiter;
     private final Chef chef;
     private final Cashier cashier;
+    private final Host host;
 
 
     public GameController(ConsoleUI ui) {
@@ -32,9 +38,10 @@ public class GameController {
         this.waiter = new Waiter();
         this.chef = new Chef();
         this.cashier = new Cashier();
+        this.host = new Host();
     }
 
-
+    // Plays all 18 turns and shows the result. There is no early ending.
     public void run() {
         ui.displayWelcome(state);
         while (!state.isGameOver()) {
@@ -47,14 +54,18 @@ public class GameController {
         state.advanceTurn();
         handleArrivals();                 // step 1
         ui.displayTurnStart(state);
+        handleHappyHour();                // start of turn: optional activation
+        applyHappyHourRecovery();         // start of turn: +15 while active
+        handleHost();                     // step 2: Host seats, in addition to the Waiter
         handleWaiter();                   // step 2 + 3: Waiter acts before the Chef
         handleChef();
         handleEatingAndPayment();         // step 4
         handleWaitingLoss();              // step 5
+        state.getHappyHour().endTurn();
         ui.displayTurnSummary(state);
     }
 
-    // Step 1: the scheduled customer joins the queue with satisfaction 100. 
+    // Step 1: the scheduled customer joins the queue with satisfaction 100.
     private void handleArrivals() {
         Customer arrival = schedule.getArrival(state.getCurrentTurn());
         if (arrival != null) {
@@ -64,7 +75,59 @@ public class GameController {
         }
     }
 
-    // Step 2 Waiter: at most one task. An invalid choice explains why and asks again without using up the task.
+    // Start of turn: if Happy Hour has not been used, ask whether to switch it on now; if it is active, show how long it has left.
+    private void handleHappyHour() {
+        HappyHour happyHour = state.getHappyHour();
+        if (!happyHour.isUsed() && ui.promptHappyHour()) {
+            ui.showMessage(happyHour.activate().getMessage());
+        }
+        if (happyHour.isActive()) {
+            ui.displayHappyHour(happyHour.getTurnsRemaining());
+        }
+    }
+
+    // Start of each active Happy Hour turn: customers still waiting for a table or food recover satisfaction, up to 100.
+
+    private void applyHappyHourRecovery() {
+        HappyHour happyHour = state.getHappyHour();
+        if (!happyHour.isActive()) {
+            return;
+        }
+        for (Customer c : state.getCustomersInRestaurant()) {
+            if (c.isAwaitingService()) {
+                int before = c.getSatisfaction();
+                c.recoverSatisfaction(happyHour.getRecoveryPoints());
+                ui.showMessage("Happy Hour: customer #" + c.getId() + " recovers satisfaction " + before + " -> "
+                        + c.getSatisfaction() + ".");
+            }
+        }
+    }
+
+    /**
+     * Step 2, Host: seat at most one queued customer, or do nothing. Only
+     * asked when someone is waiting and a table is free. An invalid choice
+     * explains why and asks again.
+     */
+    private void handleHost() {
+        while (!state.getWaitingCustomers().isEmpty() && state.findFreeTable() != null) {
+            ui.showMessage("Host: choose a customer to seat, or 0 to skip.");
+            Customer c = ui.promptCustomer(state.getWaitingCustomers());
+            if (c == null) {
+                ui.showMessage("The Host does not seat anyone this turn.");
+                return;
+            }
+            ActionResult result = host.seat(c, state);
+            ui.showMessage(result.getMessage());
+            if (result.isSuccess()) {
+                return;
+            }
+        }
+    }
+
+    /**
+     * Step 2 and 3, Waiter: at most one task. An invalid choice explains why
+     * and asks again without using up the task.
+     */
     private void handleWaiter() {
         while (true) {
             WaiterTask task = ui.promptWaiterTask();
@@ -124,7 +187,7 @@ public class GameController {
         return o == null ? null : waiter.serve(o, state);
     }
 
-    //Step 3, Chef: advance at most one order by one unit, or wait. 
+    // Step 2 and 3, Chef: advance at most one order by one unit, or wait.
     private void handleChef() {
         List<Order> cooking = state.getOrdersInPreparation();
         if (cooking.isEmpty()) {
@@ -140,8 +203,10 @@ public class GameController {
         ui.showMessage(chef.prepare(o, state).getMessage());
     }
 
-    // Step 4: customers served on an earlier turn finish eating; then the Cashier charges the oldest customer who was already READY_TO_PAY.
-     
+    /**
+     * Step 4: customers served on an earlier turn finish eating; then the
+     * Cashier charges the oldest customer who was already READY_TO_PAY.
+     */
     private void handleEatingAndPayment() {
         int turn = state.getCurrentTurn();
         for (Customer c : state.customersIn(CustomerState.EATING)) {
@@ -159,7 +224,7 @@ public class GameController {
         }
     }
 
-    // Step 5: unserved customers lose satisfaction; anyone at 0 leaves without paying. 
+    // Step 5: unserved customers lose satisfaction; anyone at 0 leaves without paying.
     private void handleWaitingLoss() {
         for (Customer c : state.getCustomersInRestaurant()) {
             if (c.applyWaitingLoss()) {
