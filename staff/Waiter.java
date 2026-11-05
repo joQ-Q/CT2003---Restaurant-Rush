@@ -24,13 +24,13 @@ public class Waiter {
             return ActionResult.fail("Only a seated customer who has not ordered yet can place an order.");
         }
         MenuOffering item = c.chooseOffering(state.getMenu());
-        int bill = c.calculateBill(item.getPriceCents());
+        int bill = state.getHappyHour().applyDiscount(c.calculateBill(item.getPriceCents()));
         Order order = new Order(state.nextOrderId(), item, c, bill);
         c.setOrder(order);
         c.changeState(CustomerState.ORDERED, state.getCurrentTurn());
         return ActionResult.ok("Customer #" + c.getId() + " ordered " + item.getName() + " (bill "
-                + Money.format(bill) + ", " + item.getPrepUnits() + " preparation unit"
-                + (item.getPrepUnits() > 1 ? "s" : "") + ").");
+                + Money.format(bill) + (state.getHappyHour().isActive() ? " with Happy Hour 20% off" : "")
+                + ", " + item.getPrepUnits() + " preparation unit" + (item.getPrepUnits() > 1 ? "s" : "") + ").");
     }
 
     public ActionResult serve(Order o, GameState state) {
