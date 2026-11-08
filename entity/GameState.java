@@ -100,7 +100,7 @@ public class GameState {
         releaseTable(c);
         unhappyDepartures++;
     }
-
+    /* encapsulate within this class so that other classes cannot accidentally release tables */
     private void releaseTable(Customer c) {
         if (c.getTable() != null) {
             c.getTable().release();
@@ -222,7 +222,9 @@ public class GameState {
         return unhappyDepartures;
     }
 
-    /** Returns the tables */
+    /** Returns the tables, encapsulate the tables so that no other classes can modify it
+     * returning only a readable version only so that my table is only fixed @ 2
+    */
     public List<Table> getTables() {
         return Collections.unmodifiableList(tables);
     }

@@ -44,6 +44,7 @@ public class HappyHour {
         if (!isActive()) {
             return priceCents;
         }
+        /* +50 shifts and prevent truncation */
         return (priceCents * PRICE_PERCENT + 50) / 100;
     }
 

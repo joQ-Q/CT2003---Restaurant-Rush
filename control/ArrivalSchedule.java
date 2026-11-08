@@ -29,7 +29,8 @@ public class ArrivalSchedule {
         }
         return null;
     }
-
+ /* encapulsation and information hiding, fixed turn will create fixed type
+ of customers without external source being able to change it */
     private Customer createCustomer(int turn, int id) {
         if (turn == VIP_TURN){
             return new VIPCustomer(id, turn);

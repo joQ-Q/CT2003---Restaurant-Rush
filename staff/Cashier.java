@@ -12,6 +12,7 @@ import entity.GameState;
 public class Cashier{
     public Cashier(){
         
+        
     }
 
     public Customer collectPayment(GameState state){
