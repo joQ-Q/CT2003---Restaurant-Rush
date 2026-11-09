@@ -37,10 +37,10 @@ public class CriticCustomer extends Customer {
      */
     @Override
     public MenuOffering chooseOffering(Menu menu) {
-        MenuItem best = menu.getItem(0);
-        for (MenuItem item : menu.getItems()) {
-            if (item.getPriceCents() > best.getPriceCents()) {
-                best = item;
+        MenuOffering best = null;
+        for (MenuOffering offering : menu.getOfferings()) {
+            if (best == null || offering.getPriceCents() > best.getPriceCents()) {
+                best = offering;
             }
         }
         return best;
